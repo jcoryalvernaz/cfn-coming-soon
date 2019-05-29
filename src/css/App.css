@@ -20,7 +20,7 @@
   width: 100%;
   position: fixed;
   text-align: center;
-  top: 30px;
+  top: 20px;
 }
 
 .countdown-loading {
@@ -75,7 +75,7 @@
   width: 100%;
   position: fixed;
   text-align: center;
-  bottom: 30px;
+  bottom: 10px;
 }
 
 .social-link {
