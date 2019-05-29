@@ -1,0 +1,179 @@
+:root {
+  --highlight-color: #61dafb;
+}
+
+.App {
+  text-align: center;
+}
+
+.background {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.countdown {
+  width: 100%;
+  position: fixed;
+  text-align: center;
+  top: 30px;
+}
+
+.countdown-loading {
+  transition: all 0.3s ease-out;
+}
+
+.countdown-segment {
+  color: white;
+  display: inline-block;
+  transition: all 0.3s ease-in;
+  margin-right: 20px;
+}
+
+.countdown-segment:last-child {
+  margin-right: 0;
+}
+
+.countdown-segment-number {
+  border-radius: 4px;
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  display: block;
+  padding: 10px;
+  margin-top: 3px;
+  font-size: 30px;
+  transition: all 0.2s ease-in-out;
+}
+
+.countdown-segment-number:hover {
+  border-color: var(--highlight-color);
+  transform: scale(1.08);
+}
+
+.countdown-segment-caption {
+  display: block;
+  margin-top: 3px;
+  font-size: 14px;
+}
+
+.description {
+  font-size: 16px;
+}
+
+.logo {
+  animation: logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.social-links {
+  width: 100%;
+  position: fixed;
+  text-align: center;
+  bottom: 30px;
+}
+
+.social-link {
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.3s ease-in;
+  margin-right: 20px;
+}
+
+.social-link:hover {
+  filter: brightness(85%);
+  text-decoration: underline;
+}
+
+.social-link:last-child {
+  margin-right: 0;
+}
+
+.social-logo {
+  width: 40px;
+}
+
+.social-text {
+  display: block;
+  margin-top: 3px;
+  font-size: 14px;
+}
+
+.subscribe {
+  margin-top: 18px;
+}
+
+.subscribe-button {
+  width: 100px;
+  height: 40px;
+  background-color: var(--highlight-color);
+  border: 0;
+  color: #000000;
+  border-radius: 4px;
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+@media (max-width: 700px) {
+  .subscribe-button {
+    width: 100%;
+    margin: 15px 0;
+  }
+}
+
+.subscribe-button:hover {
+  filter: brightness(85%);
+}
+
+.subscribe-button:focus {
+  outline: none;
+}
+
+.subscribe-email {
+  border-radius: 4px;
+  width: 230px;
+  height: 40px;
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-color: #ffffff;
+  padding-left: 15px;
+  outline: none;
+  font-size: 16px;
+  transition: all 0.2s ease-in;
+  box-sizing: border-box;
+}
+@media (max-width: 700px) {
+  .subscribe-email {
+    padding-left: 10px;
+    width: 100%
+  }
+}
+
+.subscribe-email::placeholder {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.subscribe-email:focus, :hover {
+  border-color: var(--highlight-color);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
