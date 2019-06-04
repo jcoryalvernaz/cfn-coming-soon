@@ -9,8 +9,8 @@ class Subscribe extends Component {
     } = this.props;
 
     return (
-      <div className="subscribe">
-        <form onSubmit={(e) => this.props.onSubmit(e)}>
+
+        <form className="subscribe" onSubmit={(e) => this.props.onSubmit(e)}>
           <input
             className="subscribe-email"
             type="email"
@@ -22,7 +22,7 @@ class Subscribe extends Component {
             {buttonText}
           </button>
         </form>
-      </div>
+
     );
   }
 }

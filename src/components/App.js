@@ -10,8 +10,8 @@ class App extends Component {
     return (
       <ComingSoon
         background={{
-          image: backgroundImage,
-          color: '#282c34',
+          //image: backgroundImage,
+          //color: '#282c34',
         }}
         logo={{
           alt: 'Spinning React Logo',
@@ -40,7 +40,7 @@ class App extends Component {
           }
         ]}
         countdown={{
-          futureDate: '2019-05-31 00:00:00',
+          futureDate: '2019-08-31 00:00:00',
           loadingMessage: 'Countdown to Deployment...'
         }}/>
     );

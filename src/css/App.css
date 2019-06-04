@@ -8,19 +8,24 @@
 
 .background {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-rows: 150px fit-content 50px 80px 100px 150px;
+  grid-template-areas:
+    "header         header        header"
+    "sidebar-left   logo          sidebar-right"
+    "sidebar-left   title         sidebar-right"
+    "sidebar-left   description   sidebar-right"
+    "sidebar-left   subscribe     sidebar-right"
+    "footer         footer        footer";
+  justify-items: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
 .countdown {
-  width: 100%;
-  position: fixed;
-  text-align: center;
-  top: 20px;
+  grid-area: header;
 }
 
 .countdown-loading {
@@ -62,7 +67,12 @@
 }
 
 .description {
+  grid-area: description;
   font-size: 16px;
+}
+
+.logo-container {
+  grid-area: logo;
 }
 
 .logo {
@@ -72,10 +82,8 @@
 }
 
 .social-links {
-  width: 100%;
-  position: fixed;
-  text-align: center;
-  bottom: 10px;
+  grid-area: footer;
+  align-self: end;
 }
 
 .social-link {
@@ -106,6 +114,8 @@
 }
 
 .subscribe {
+  grid-area: subscribe;
+  justify-self: center;
   margin-top: 18px;
 }
 
@@ -123,7 +133,7 @@
   transition: all 0.2s ease-in;
 }
 @media (max-width: 700px) {
-  .subscribe-button {
+  .subscribe__button {
     width: 100%;
     margin: 15px 0;
   }
@@ -165,6 +175,11 @@
 
 .subscribe-email:focus, :hover {
   border-color: var(--highlight-color);
+}
+
+.title {
+  grid-area: title;
+  align-self: end;
 }
 
 @keyframes logo-spin {
