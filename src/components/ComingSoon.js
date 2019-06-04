@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { Logo } from "./Logo";
 import { Title } from "./Title";
 import { Description } from "./Description";
@@ -8,27 +9,8 @@ import Subscribe from "./Subscribe";
 import "../css/ComingSoon.css";
 
 class ComingSoon extends Component {
-  state = {
-    email: ""
-  };
-
-  onChangeEmail = e => {
-    this.setState({ email: e.target.value });
-  };
-
-  onSubmitEmail = e => {
-    e.preventDefault();
-
-    if (this.state.email) {
-      this.setState({ email: "" });
-    }
-  };
-
-  componentDidMount() {}
-
   render() {
     const {
-      background,
       title,
       description,
       logo,
@@ -38,14 +20,7 @@ class ComingSoon extends Component {
     } = this.props;
 
     return (
-      <div
-        className="background"
-        style={{
-          backgroundImage: `url(${background.image})`,
-          backgroundColor: background.color,
-          color: background.textColor
-        }}
-      >
+      <div className="background">
         <Countdown
           futureDate={countdown.futureDate}
           loadingMessage={countdown.loadingMessage}
@@ -56,9 +31,6 @@ class ComingSoon extends Component {
         <Subscribe
           placeholder={subscribe.placeholder}
           buttonText={subscribe.buttonText}
-          onChange={this.onChangeEmail}
-          onSubmit={this.onSubmitEmail}
-          email={this.state.email}
         />
         <Links links={links} />
       </div>
@@ -66,12 +38,29 @@ class ComingSoon extends Component {
   }
 }
 
+ComingSoon.propTypes = {
+  logo: PropTypes.shape({
+    src: PropTypes.string,
+    alt: PropTypes.string
+  }),
+  title: PropTypes.shape({
+    text: PropTypes.string
+  }),
+  description: PropTypes.shape({
+    text: PropTypes.string
+  }),
+  subscribe: PropTypes.shape({
+    placeholder: PropTypes.string,
+    buttonText: PropTypes.string
+  }),
+  links: PropTypes.arrayOf(PropTypes.shape({
+    url: PropTypes.string,
+    logo: PropTypes.string,
+    text: PropTypes.string
+  }))
+};
+
 ComingSoon.defaultProps = {
-  background: {
-    image: "",
-    color: "",
-    textColor: ""
-  },
   logo: {
     alt: "",
     src: ""
