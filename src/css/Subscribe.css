@@ -1,0 +1,67 @@
+.subscribe {
+    grid-area: subscribe;
+    display: grid;
+    grid-template-columns: [input] 3fr [button] 1fr;
+    align-items: center;
+  }
+
+  .subscribe-email {
+    grid-area: input;
+    border-radius: 4px;
+    height: 40px;
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-color: #ffffff;
+    padding-left: 10px;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.2s ease-in;
+  }
+
+  .subscribe-email::placeholder {
+    color: #ffffff;
+    font-size: 16px;
+  }
+
+  .subscribe-email:focus, :hover {
+    border-color: var(--highlight-color);
+  }
+
+  .subscribe-button {
+    grid-area: button;
+    height: 40px;
+    background-color: var(--highlight-color);
+    border: 0;
+    color: #000000;
+    border-radius: 4px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+  }
+
+  .subscribe-button:hover {
+    filter: brightness(85%);
+  }
+
+  .subscribe-button:focus {
+    outline: none;
+  }
+
+  @media (max-width: 700px) {
+    .subscribe {
+      grid-column: 2 / 3;
+      grid-template-areas:
+        "input"
+        "button"
+    }
+    .subscribe-button, .subscribe-email {
+      width: 250px;
+      grid-column: 1 / -1;
+      margin: 5px 0;
+    }
+  }

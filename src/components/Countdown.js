@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import moment, { duration } from "moment";
 import PropTypes from "prop-types";
+import "../css/Countdown.css";
 
 class Countdown extends Component {
   state = {

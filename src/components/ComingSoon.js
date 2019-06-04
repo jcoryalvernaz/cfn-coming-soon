@@ -5,6 +5,7 @@ import { Description } from "./Description";
 import { Links } from "./Links";
 import Countdown from "./Countdown";
 import Subscribe from "./Subscribe";
+import "../css/ComingSoon.css";
 
 class ComingSoon extends Component {
   state = {

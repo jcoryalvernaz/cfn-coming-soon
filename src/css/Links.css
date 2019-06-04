@@ -1,0 +1,32 @@
+.social-links {
+    grid-area: social;
+    align-self: end;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    justify-items: center;
+    grid-gap: 20px;
+  }
+
+  .social-link {
+    color: white;
+    grid-column: minmax(50px, 1fr);
+    display: grid;
+    justify-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease-in;
+  }
+
+  .social-link:hover {
+    filter: brightness(85%);
+    text-decoration: underline;
+  }
+
+  .social-logo {
+    width: 40px;
+  }
+
+  .social-text {
+    margin-top: 3px;
+    font-size: 14px;
+  }

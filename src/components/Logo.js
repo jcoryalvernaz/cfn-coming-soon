@@ -1,4 +1,5 @@
 import React from "react";
+import "../css/Logo.css";
 
 export const Logo = ({
   alt = "No Logo Provided",
