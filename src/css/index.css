@@ -12,7 +12,7 @@ body {
   background-image: url(../floating-cogs.svg);
   background-color: #282c34;
   min-height: calc(100vh - 100px);
-  margin: 50px;
+  margin: 10px;
   background-attachment: fixed;
 }
 
