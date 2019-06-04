@@ -1,31 +1,26 @@
-:root {
-  --highlight-color: #61dafb;
-}
-
-.App {
-  text-align: center;
-}
-
 .background {
-  min-height: 100vh;
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 10px;
   grid-template-columns: 1fr 10fr 1fr;
-  grid-template-rows: 150px fit-content 50px 80px 100px 150px;
+  grid-template-rows: 100px fit-content(200px) 50px 80px 100px 150px;
   grid-template-areas:
-    "header         header        header"
-    "sidebar-left   logo          sidebar-right"
-    "sidebar-left   title         sidebar-right"
-    "sidebar-left   description   sidebar-right"
-    "sidebar-left   subscribe     sidebar-right"
-    "footer         footer        footer";
+    "sidebar-left     countdown     sidebar-right"
+    "sidebar-left     logo          sidebar-right"
+    "sidebar-left     title         sidebar-right"
+    "sidebar-left     description   sidebar-right"
+    "sidebar-left     subscribe     sidebar-right"
+    "sidebar-left     social        sidebar-right";
   justify-items: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
 .countdown {
-  grid-area: header;
+  grid-area: countdown;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  grid-gap: 20px;
 }
 
 .countdown-loading {
@@ -33,14 +28,12 @@
 }
 
 .countdown-segment {
+  display: grid;
+  grid-template-columns: minmax(50px, 1fr);
+  justify-items: center;
+  align-items: center;
   color: white;
-  display: inline-block;
   transition: all 0.3s ease-in;
-  margin-right: 20px;
-}
-
-.countdown-segment:last-child {
-  margin-right: 0;
 }
 
 .countdown-segment-number {
@@ -48,9 +41,7 @@
   background-color: #000000;
   color: #ffffff;
   border: 1px solid #ffffff;
-  display: block;
   padding: 10px;
-  margin-top: 3px;
   font-size: 30px;
   transition: all 0.2s ease-in-out;
 }
@@ -61,8 +52,6 @@
 }
 
 .countdown-segment-caption {
-  display: block;
-  margin-top: 3px;
   font-size: 14px;
 }
 
@@ -82,16 +71,23 @@
 }
 
 .social-links {
-  grid-area: footer;
+  grid-area: social;
   align-self: end;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  justify-items: center;
+  grid-gap: 20px;
 }
 
 .social-link {
   color: white;
-  display: inline-block;
+  grid-column: minmax(50px, 1fr);
+  display: grid;
+  justify-items: center;
   text-decoration: none;
+  text-align: center;
   transition: all 0.3s ease-in;
-  margin-right: 20px;
 }
 
 .social-link:hover {
@@ -99,41 +95,37 @@
   text-decoration: underline;
 }
 
-.social-link:last-child {
-  margin-right: 0;
-}
-
 .social-logo {
   width: 40px;
 }
 
 .social-text {
-  display: block;
   margin-top: 3px;
   font-size: 14px;
 }
 
 .subscribe {
   grid-area: subscribe;
-  justify-self: center;
-  margin-top: 18px;
+  display: grid;
+  grid-template-columns: [input] 3fr [button] 1fr;
 }
 
 .subscribe-button {
-  width: 100px;
+  grid-area: button;
   height: 40px;
   background-color: var(--highlight-color);
   border: 0;
   color: #000000;
   border-radius: 4px;
   margin-left: 10px;
+  margin-right: 10px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.2s ease-in;
 }
 @media (max-width: 700px) {
-  .subscribe__button {
+  .subscribe-button {
     width: 100%;
     margin: 15px 0;
   }
@@ -148,23 +140,28 @@
 }
 
 .subscribe-email {
+  grid-area: input;
   border-radius: 4px;
-  width: 230px;
   height: 40px;
   background-color: #000000;
   color: #ffffff;
   border: 1px solid #ffffff;
   border-color: #ffffff;
-  padding-left: 15px;
+  padding-left: 10px;
   outline: none;
   font-size: 16px;
   transition: all 0.2s ease-in;
-  box-sizing: border-box;
 }
 @media (max-width: 700px) {
-  .subscribe-email {
-    padding-left: 10px;
-    width: 100%
+  .subscribe {
+    grid-column: 2 / 3;
+    grid-template-areas:
+      "input"
+      "button"
+  }
+  .subscribe-button, .subscribe-email {
+    width: 250px;
+    grid-column: 1 / -1;
   }
 }
 
