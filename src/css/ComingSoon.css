@@ -1,7 +1,7 @@
 .background {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: 1fr 12fr 1fr;
+  grid-template-columns: 1fr 10fr 1fr;
   grid-template-rows: 100px auto 50px 80px 100px 150px;
   grid-template-areas:
     "sidebar-left     countdown     sidebar-right"
@@ -12,6 +12,19 @@
     "sidebar-left     social        sidebar-right";
   justify-items: center;
   color: white;
+}
+
+@media(max-width: 500px) {
+  .background {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "countdown"
+      "logo"
+      "title"
+      "description"
+      "subscribe"
+      "social"
+  }
 }
 
 

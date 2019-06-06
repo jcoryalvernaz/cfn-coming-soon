@@ -33,9 +33,3 @@
   .countdown-segment-caption {
     font-size: 14px;
   }
-
-  @media(max-width: 500px) {
-    .countdown {
-      grid-gap: 10px;
-    }
-  }
