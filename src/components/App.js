@@ -24,12 +24,12 @@ class App extends Component {
           {
             url: "https://www.facebook.com/JasonAlvernaz",
             logo: "https://image.flaticon.com/icons/svg/220/220200.svg",
-            text: "Follow Us"
+            text: "Join"
           },
           {
             url: "https://www.twitter.com/JasonAlvernaz",
             logo: "https://image.flaticon.com/icons/svg/145/145812.svg",
-            text: "Tweet Us"
+            text: "Follow"
           }
         ]}
         countdown={{

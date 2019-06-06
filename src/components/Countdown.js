@@ -51,20 +51,16 @@ class Countdown extends Component {
   render() {
     return (
       <div className="countdown">
-        {Object.values(this.state).filter(value => value !== 0).length === 0 ? (
-          <div className="countdown-loading">{this.props.loadingMessage}</div>
-        ) : (
-          Object.keys(this.state).map((key, i) => (
-            <div key={i} className="countdown-segment">
-              <span className="countdown-segment-number">
-                {this.addZeros(this.state[key])}
-              </span>
-              <span className="countdown-segment-caption">
-                {key.toUpperCase()}
-              </span>
-            </div>
-          ))
-        )}
+        {Object.keys(this.state).map((key, i) => (
+          <div key={i} className="countdown-segment">
+            <span className="countdown-segment-number">
+              {this.addZeros(this.state[key])}
+            </span>
+            <span className="countdown-segment-caption">
+              {key.toUpperCase()}
+            </span>
+          </div>
+        ))}
       </div>
     );
   }
@@ -75,7 +71,7 @@ Countdown.propTypes = {
 };
 
 Countdown.defaultProps = {
-    futureDate: new Date()
+  futureDate: new Date()
 };
 
 export default Countdown;

@@ -6,17 +6,12 @@
     grid-gap: 20px;
   }
 
-  .countdown-loading {
-    transition: all 0.3s ease-out;
-  }
-
   .countdown-segment {
     display: grid;
     grid-template-columns: minmax(50px, 1fr);
     justify-items: center;
     align-items: center;
     color: white;
-    transition: all 0.3s ease-in;
   }
 
   .countdown-segment-number {
@@ -28,7 +23,7 @@
     padding: 10px 10px;
     justify-content: center;
     font-size: 30px;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.5s ease-in;
   }
 
   .countdown-segment-number:hover {

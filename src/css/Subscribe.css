@@ -1,7 +1,8 @@
 .subscribe {
     grid-area: subscribe;
     display: grid;
-    grid-template-columns: [input] 3fr [button] 1fr;
+    grid-gap: 10px;
+    grid-template-columns: [input] 4fr [button] 1fr;
     align-items: center;
   }
 
@@ -36,8 +37,6 @@
     color: #000000;
     border-radius: 4px;
     padding: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
@@ -54,7 +53,6 @@
 
   @media (max-width: 700px) {
     .subscribe {
-      grid-column: 2 / 3;
       grid-template-areas:
         "input"
         "button"
@@ -62,6 +60,5 @@
     .subscribe-button, .subscribe-email {
       width: 250px;
       grid-column: 1 / -1;
-      margin: 5px 0;
     }
   }
