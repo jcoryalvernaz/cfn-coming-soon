@@ -42,7 +42,7 @@ class Subscribe extends Component {
     const { placeholder, buttonText } = this.props;
 
     return (
-      <form className="subscribe" onSubmit={e => this.onSubmit(e)}>
+      <form name="subscribe" netlify className="subscribe" onSubmit={e => this.onSubmit(e)}>
         <input
           className="subscribe-email"
           name="email"
