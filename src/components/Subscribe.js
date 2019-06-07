@@ -16,6 +16,7 @@ class Subscribe extends Component {
     if (this.state.email) {
       const authString = btoa(`anystring:${process.env.API_KEY}`);
       console.log(authString);
+      console.log(process.env.LIST_ID);
       fetch(`https://us20.api.mailchimp.com/3.0/lists/${process.env.LIST_ID}/members/`, {
         method: 'POST',
         mode: 'no-cors',
