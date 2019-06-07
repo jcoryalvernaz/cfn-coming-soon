@@ -9,6 +9,7 @@
   .countdown-segment {
     display: grid;
     grid-template-columns: minmax(50px, 1fr);
+    min-width: 100%;
     align-items: center;
     color: white;
   }
