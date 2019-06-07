@@ -17,7 +17,9 @@
   .countdown-segment-number {
     border-radius: 4px;
     background-color: #000000;
+    overflow: hidden;
     color: #ffffff;
+    width: 100%;
     border: 1px solid #ffffff;
     justify-content: center;
     padding: 10px 10px;
@@ -32,10 +34,4 @@
 
   .countdown-segment-caption {
     font-size: 14px;
-  }
-
-  @media(max-width: 500px) {
-    .countdown {
-      grid-gap: 10px;
-    }
   }
