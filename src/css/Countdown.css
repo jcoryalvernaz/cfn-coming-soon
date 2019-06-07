@@ -9,7 +9,6 @@
   .countdown-segment {
     display: grid;
     grid-template-columns: minmax(50px, 1fr);
-    justify-items: center;
     align-items: center;
     color: white;
   }
@@ -17,9 +16,7 @@
   .countdown-segment-number {
     border-radius: 4px;
     background-color: #000000;
-    overflow: hidden;
     color: #ffffff;
-    min-width: 100%;
     border: 1px solid #ffffff;
     justify-content: center;
     padding: 10px 10px;
