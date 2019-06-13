@@ -1,8 +1,15 @@
 .logo-container {
     grid-area: logo;
     animation: logo-spin infinite 5s linear;
-    animation-play-state: paused;
-  }
+}
+
+.slow {
+  animation-play-state: paused;
+}
+
+.fast {
+  animation-play-state: running;
+}
 
 .logo {
   animation: logo-spin infinite 20s linear;

@@ -7,19 +7,23 @@ class Subscribe extends Component {
   };
 
   handleChange = e => {
-    this.setState({ email: e.target.value });
+    this.setState({ email: e.target.value.trim() });
   };
 
   handleSubmit = e => {
     e.preventDefault();
 
     if (this.state.email) {
-      fetch(`/api/memberAdd?email=${this.state.email}`).catch(err => {
-        console.log("error", err);
-      });
-
+      fetch(`/api/memberAdd?email=${this.state.email}`)
+        .then()
+        .catch(err => {
+          console.log("error", err);
+        });
+      this.props.toggleLogoSpeed();
+      setTimeout(this.props.toggleLogoSpeed, 2000);
       this.setState({ email: "" });
     }
+
   };
 
   render() {
@@ -35,7 +39,7 @@ class Subscribe extends Component {
           onChange={this.handleChange}
           value={this.state.email}
         />
-        <button className="subscribe-button" type="submit">
+        <button className="subscribe-button" type="submit" >
           {buttonText}
         </button>
       </form>
