@@ -1,12 +1,9 @@
 import React, { Component } from "react";
-import { ToastContainer, toast } from 'react-toastify';
 import "../css/Subscribe.css";
-import "react-toastify/dist/ReactToastify.css"
 
 class Subscribe extends Component {
   state = {
-    email: "",
-    message: ""
+    email: ""
   };
 
   handleChange = e => {
@@ -22,39 +19,28 @@ class Subscribe extends Component {
           return message.json();
         })
         .then(json => {
-          if (json.status !== 'subscribed') {
-            this.setState({
-              message: "There was a problem with your email submission. Please check the email and try again."
-            });
-            this.error();
+          if (json.status === "subscribed") {
+            this.props.configureToast('success');
           } else {
-            this.setState({
-              message: 'Thank you for subscribing to our mailing list. You will be receiving a welcome email shortly.'
-            });
-            this.success();
+            this.props.configureToast('warning');
           }
+          this.props.showToast();
         })
         .catch(err => {
           console.log("error", err);
         });
 
-      this.props.toggleLogoSpeed();
-
-      setTimeout(this.props.toggleLogoSpeed, 1000);
+      this.props.changeLogoSpeed();
 
       this.setState({ email: "" });
     }
   };
 
-  success = () => toast.success(this.state.message);
-
-  error = () => toast.error(this.state.message);
-
   render() {
     const { placeholder, buttonText } = this.props;
 
     return (
-      <form className="subscribe" onSubmit={e => this.handleSubmit(e)}>
+      <form className="subscribe" onSubmit={this.handleSubmit}>
         <input
           className="subscribe-email"
           name="email"
@@ -66,13 +52,6 @@ class Subscribe extends Component {
         <button className="subscribe-button" type="submit">
           {buttonText}
         </button>
-        <ToastContainer
-          position="bottom-center"
-          autoClose={5000}
-          hideProgressBar={true}
-          closeOnClick
-          pauseOnHover
-         />
       </form>
     );
   }

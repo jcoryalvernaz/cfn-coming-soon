@@ -6,7 +6,8 @@ import { Description } from "./Description";
 import { Links } from "./Links";
 import Countdown from "./Countdown";
 import Subscribe from "./Subscribe";
-import logo from "../logo.svg"
+import Toast from "./Toast";
+import logo from "../logo.svg";
 import "../css/ComingSoon.css";
 
 class ComingSoon extends Component {
@@ -40,13 +41,53 @@ class ComingSoon extends Component {
         logo: "https://image.flaticon.com/icons/svg/145/145812.svg",
         text: "Follow"
       }
-    ]
+    ],
+    toast: {
+      src: "http://svgshare.com/i/19y.svg",
+      alt: "",
+      message: "Thank you for subscribing to our mailing list. You will be receiving a welcome email shortly.",
+      visible: false,
+      level: "success"
+    }
   };
 
-  toggleLogoSpeed = () => {
-    const logo = { ...this.state.logo }
-    logo.spinSpeed === 'slow' ? logo.spinSpeed = 'fast' : logo.spinSpeed = 'slow';
-    this.setState({ logo });
+  configureToast = level => {
+    const toast = { ...this.state.toast };
+    toast.level = level;
+    if (level === "success") {
+      toast.src = "http://svgshare.com/i/19y.svg";
+      toast.alt = "Check Mark";
+      toast.message = `Thank you for subscribing to our mailing list.
+                        You will be receiving a welcome email shortly.`;
+    } else {
+      toast.src = "http://svgshare.com/i/19x.svg";
+      toast.alt = "Exclamation Point";
+      toast.message = `There was an issue with your email submission.
+                      Please check your email and try again.`;
+    }
+    this.setState({ toast });
+  };
+
+  showToast = () => {
+    const toast = { ...this.state.toast };
+    toast.visible = true;
+    this.setState({ toast }, () => {
+      setTimeout(() => {
+        toast.visible = false;
+        this.setState({ toast });
+      }, 3000);
+    });
+  };
+
+  changeLogoSpeed = () => {
+    const logo = { ...this.state.logo };
+    logo.spinSpeed = "fast";
+    this.setState({ logo }, () => {
+      setTimeout(() => {
+        logo.spinSpeed = "slow";
+        this.setState({ logo });
+      }, 1000);
+    });
   };
 
   render() {
@@ -56,21 +97,36 @@ class ComingSoon extends Component {
       logo,
       subscribe,
       links,
-      countdown
+      countdown,
+      toast
     } = this.state;
 
     return (
       <div className="background">
         <Countdown futureDate={countdown.futureDate} />
-        <Logo alt={logo.alt} src={logo.src} spinSpeed={logo.spinSpeed} toggleLogoSpeed={this.toggleLogoSpeed}/>
+        <Logo
+          alt={logo.alt}
+          src={logo.src}
+          spinSpeed={logo.spinSpeed}
+          toggleLogoSpeed={this.toggleLogoSpeed}
+        />
         <Title text={title.text} />
         <Description text={description.text} />
         <Subscribe
           placeholder={subscribe.placeholder}
           buttonText={subscribe.buttonText}
-          toggleLogoSpeed={this.toggleLogoSpeed}
+          changeLogoSpeed={this.changeLogoSpeed}
+          configureToast={this.configureToast}
+          showToast={this.showToast}
         />
         <Links links={links} />
+        <Toast
+          src={toast.src}
+          alt={toast.alt}
+          message={toast.message}
+          visible={toast.visible}
+          level={toast.level}
+        />
       </div>
     );
   }
