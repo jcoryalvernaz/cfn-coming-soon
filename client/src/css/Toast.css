@@ -33,10 +33,10 @@
 }
 
 .toast figure img {
-    fill: black;
+    align-self: center;
     width: 40px;
 }
 
 .toast figure figcaption {
-    align-content: center;
+    align-self: center;
 }
