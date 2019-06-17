@@ -21,8 +21,10 @@ class Subscribe extends Component {
         .then(json => {
           if (json.status === "subscribed") {
             this.props.configureToast('success');
-          } else {
+          } else if (json.title === "Member Exists") {
             this.props.configureToast('warning');
+          } else {
+            this.props.configureToast('danger')
           }
           this.props.showToast();
         })

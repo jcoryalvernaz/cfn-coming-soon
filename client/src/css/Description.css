@@ -1,4 +1,16 @@
 .description {
+    overflow: hidden;
     grid-area: description;
+    display: grid;
     font-size: 16px;
+    grid-template-columns: 1;
+    grid-template-rows: 1;
+  }
+
+  .description-text {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
   }

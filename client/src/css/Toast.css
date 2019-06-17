@@ -1,21 +1,16 @@
 .toast {
     border-radius: 4px;
     display: grid;
-    justify-self: center;
-    overflow: hidden;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
     grid-template-columns: 1;
     grid-template-rows: 1;
-    justify-items: center;
-    align-items: center;
-    max-height: 80px;
-    max-width: 300px;
-    position: fixed;
     transition: all .35s ease;
-    transform: translateY(-200%);
+    transform: translateY(100%);
 }
 
 .toast.visible {
-    transform: translateY(400%);
+    transform: translateY(0);
 }
 
 .toast.success {
@@ -25,18 +20,23 @@
 .toast.warning {
     background-color: #f38211;
 }
+
+.toast.danger {
+    background-color: #c0392b;
+}
 .toast figure {
     display: grid;
     grid-gap: 10px;
     grid-column: 1 / -1;
     grid-row: 1 / -1;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 5fr;
 }
 
 .toast figure img {
-    height: 100%;
-    width: 100%;
+    fill: black;
+    width: 40px;
+}
+
+.toast figure figcaption {
+    align-content: center;
 }

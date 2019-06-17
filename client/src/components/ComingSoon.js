@@ -6,7 +6,6 @@ import { Description } from "./Description";
 import { Links } from "./Links";
 import Countdown from "./Countdown";
 import Subscribe from "./Subscribe";
-import Toast from "./Toast";
 import logo from "../logo.svg";
 import "../css/ComingSoon.css";
 
@@ -24,7 +23,7 @@ class ComingSoon extends Component {
       text: "Coming Soon!"
     },
     description: {
-      text: "This website will be up and running shortly."
+      text: "This website will be up and running shortly. Please subscribe to our newsletter below to receive updates when new course material is available."
     },
     subscribe: {
       placeholder: "Enter Email Address",
@@ -45,7 +44,8 @@ class ComingSoon extends Component {
     toast: {
       src: "http://svgshare.com/i/19y.svg",
       alt: "",
-      message: "Thank you for subscribing to our mailing list. You will be receiving a welcome email shortly.",
+      message:
+        "Thank you for subscribing to our mailing list. You will be receiving a welcome email shortly.",
       visible: false,
       level: "success"
     }
@@ -59,11 +59,16 @@ class ComingSoon extends Component {
       toast.alt = "Check Mark";
       toast.message = `Thank you for subscribing to our mailing list.
                         You will be receiving a welcome email shortly.`;
-    } else {
+    } else if (level === "warning") {
       toast.src = "http://svgshare.com/i/19x.svg";
       toast.alt = "Exclamation Point";
+      toast.message = `The email you entered is already on our mailing list.
+                        Thank you for joining the community.`;
+    } else {
+      toast.src = "http://svgshare.com/i/19E.svg";
+      toast.alt = "X";
       toast.message = `There was an issue with your email submission.
-                      Please check your email and try again.`;
+                        Please check your email and try again.`
     }
     this.setState({ toast });
   };
@@ -111,7 +116,14 @@ class ComingSoon extends Component {
           toggleLogoSpeed={this.toggleLogoSpeed}
         />
         <Title text={title.text} />
-        <Description text={description.text} />
+        <Description
+          text={description.text}
+          src={toast.src}
+          alt={toast.alt}
+          message={toast.message}
+          visible={toast.visible}
+          level={toast.level}
+        />
         <Subscribe
           placeholder={subscribe.placeholder}
           buttonText={subscribe.buttonText}
@@ -120,13 +132,6 @@ class ComingSoon extends Component {
           showToast={this.showToast}
         />
         <Links links={links} />
-        <Toast
-          src={toast.src}
-          alt={toast.alt}
-          message={toast.message}
-          visible={toast.visible}
-          level={toast.level}
-        />
       </div>
     );
   }
