@@ -50,6 +50,7 @@ class Subscribe extends Component {
           placeholder={placeholder}
           onChange={this.handleChange}
           value={this.state.email}
+          aria-label="Email Address"
         />
         <button className="subscribe-button" type="submit">
           {buttonText}

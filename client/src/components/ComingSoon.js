@@ -46,7 +46,7 @@ class ComingSoon extends Component {
       alt: "",
       message:
         "Thank you for subscribing to our mailing list. You will be receiving a welcome email shortly.",
-      visible: false,
+      visible: true,
       level: "success"
     }
   };
@@ -55,17 +55,17 @@ class ComingSoon extends Component {
     const toast = { ...this.state.toast };
     toast.level = level;
     if (level === "success") {
-      toast.src = "http://svgshare.com/i/19y.svg";
+      toast.src = "https://svgshare.com/i/19y.svg";
       toast.alt = "Check Mark";
       toast.message = `Thank you for subscribing to our mailing list.
                         You will be receiving a welcome email shortly.`;
     } else if (level === "warning") {
-      toast.src = "http://svgshare.com/i/19x.svg";
+      toast.src = "https://svgshare.com/i/19x.svg";
       toast.alt = "Exclamation Point";
       toast.message = `The email you entered is already on our mailing list.
                         Thank you for joining the community.`;
     } else {
-      toast.src = "http://svgshare.com/i/19E.svg";
+      toast.src = "https://svgshare.com/i/19E.svg";
       toast.alt = "X";
       toast.message = `There was an issue with your email submission.
                         Please check your email and try again.`

@@ -9,10 +9,8 @@ class Toast extends Component {
           this.props.visible ? " visible" : ""
         }`}
       >
-        <figure>
-          <img src={this.props.src} alt={this.props.alt} />
-          <figcaption>{this.props.message}</figcaption>
-        </figure>
+        <img src={this.props.src} alt={this.props.alt} />
+        <p>{this.props.message}</p>
       </div>
     );
   }

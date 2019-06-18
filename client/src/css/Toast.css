@@ -1,10 +1,10 @@
 .toast {
     border-radius: 4px;
     display: grid;
+    grid-gap: 10px;
     grid-column: 1 / -1;
     grid-row: 1 / -1;
-    grid-template-columns: 1;
-    grid-template-rows: 1;
+    grid-template-columns: 1fr 5fr;
     transition: all .35s ease;
     transform: translateY(100%);
 }
@@ -24,19 +24,22 @@
 .toast.danger {
     background-color: #c0392b;
 }
-.toast figure {
-    display: grid;
-    grid-gap: 10px;
-    grid-column: 1 / -1;
-    grid-row: 1 / -1;
-    grid-template-columns: 1fr 5fr;
-}
 
-.toast figure img {
+.toast img {
+    fill: black;
     align-self: center;
+    justify-self: center;
     width: 40px;
 }
 
-.toast figure figcaption {
+.toast p {
+    color: black;
     align-self: center;
+    padding-right: 10px;
+}
+
+@media(max-width: 500px) {
+    .toast p {
+        align-self: auto;
+    }
 }
