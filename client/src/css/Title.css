@@ -1,4 +1,25 @@
 .title {
-    grid-area: title;
-    align-self: end;
-  }
+  grid-area: title;
+  display: grid;
+  width: 100%;
+  align-content: center;
+}
+
+.title h1 {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-gap: 20px;
+  align-items: center;
+}
+
+.title h1:before, .title h1:after {
+  display: block;
+  content: '';
+  height: 10px;
+  background: linear-gradient(to var(--direction, left), var(--highlight-color), transparent);
+}
+
+.title h1:after {
+  --direction: right;
+}

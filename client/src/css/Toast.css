@@ -26,9 +26,8 @@
 }
 
 .toast img {
-    fill: black;
-    align-self: center;
     justify-self: center;
+    align-self: center;
     width: 40px;
 }
 
@@ -36,5 +35,4 @@
     color: black;
     align-self: center;
     padding-right: 10px;
-    display: inline;
 }

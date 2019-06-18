@@ -23,7 +23,7 @@ class ComingSoon extends Component {
       text: "Coming Soon!"
     },
     description: {
-      text: "This website will be up and running shortly. Please subscribe to our newsletter below to receive updates when new course material is available."
+      text: "Coding From Null will be up and running shortly. Please subscribe to our newsletter below to receive updates when new course material is available."
     },
     subscribe: {
       placeholder: "Enter Email Address",
@@ -46,7 +46,7 @@ class ComingSoon extends Component {
       alt: "",
       message:
         "Thank you for subscribing to our mailing list. You will be receiving a welcome email shortly.",
-      visible: true,
+      visible: false,
       level: "success"
     }
   };
