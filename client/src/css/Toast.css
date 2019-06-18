@@ -36,10 +36,5 @@
     color: black;
     align-self: center;
     padding-right: 10px;
-}
-
-@media(max-width: 500px) {
-    .toast p {
-        align-self: auto;
-    }
+    display: inline;
 }
