@@ -21,27 +21,29 @@ class Countdown extends Component {
 
   setCountdown() {
     const futureDate = moment(this.props.futureDate);
-    this.interval = setInterval(() => {
-      const today = moment();
 
-      const clockDuration = duration(futureDate.diff(today));
+    const today = moment();
 
-      const days = clockDuration.days();
-      const hours = clockDuration.hours();
-      const mins = clockDuration.minutes();
-      const secs = clockDuration.seconds();
+    const clockDuration = duration(futureDate.diff(today));
 
-      this.setState({
-        days,
-        hours,
-        mins,
-        secs
-      });
-    }, 1000);
+    const days = clockDuration.days();
+    const hours = clockDuration.hours();
+    const mins = clockDuration.minutes();
+    const secs = clockDuration.seconds();
+
+    this.setState({
+      days,
+      hours,
+      mins,
+      secs
+    });
   }
 
   componentDidMount() {
     this.setCountdown();
+    this.interval = setInterval(() => {
+      this.setCountdown();
+    }, 1000);
   }
 
   componentWillUnmount() {
