@@ -1,4 +1,4 @@
-.toast {
+.notification {
     border-radius: 4px;
     display: grid;
     grid-gap: 10px;
@@ -10,30 +10,30 @@
     transform: translateY(100%);
 }
 
-.toast.visible {
+.notification.visible {
     transform: translateY(0);
 }
 
-.toast.success {
+.notification.success {
     background-color: var(--highlight-color);
 }
 
-.toast.warning {
+.notification.warning {
     background-color: #f38211;
 }
 
-.toast.danger {
+.notification.danger {
     background-color: #c0392b;
 }
 
-.toast img {
+.notification img {
     stroke: black;
     justify-self: center;
     align-self: center;
     width: 40px;
 }
 
-.toast p {
+.notification p {
     color: black;
     align-self: center;
     padding-right: 10px;

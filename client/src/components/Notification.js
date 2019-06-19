@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import "../css/Toast.css";
+import "../css/Notification.css";
 
-class Toast extends Component {
+class Notification extends Component {
   render() {
     return (
       <div
-        className={`toast ${this.props.level}${
+        className={`notification ${this.props.level}${
           this.props.visible ? " visible" : ""
         }`}
       >
@@ -16,4 +16,4 @@ class Toast extends Component {
   }
 }
 
-export default Toast;
+export default Notification;

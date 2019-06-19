@@ -44,7 +44,7 @@ class ComingSoon extends Component {
         text: "Follow"
       }
     ],
-    toast: {
+    notification: {
       src: "",
       alt: "",
       message: "",
@@ -53,35 +53,35 @@ class ComingSoon extends Component {
     }
   };
 
-  configureToast = level => {
-    const toast = { ...this.state.toast };
-    toast.level = level;
+  configureNotification = level => {
+    const notification = { ...this.state.notification };
+    notification.level = level;
     if (level === "success") {
-      toast.src = check;
-      toast.alt = "Check Mark";
-      toast.message = `Thank you for subscribing to our mailing list.
+      notification.src = check;
+      notification.alt = "Check Mark";
+      notification.message = `Thank you for subscribing to our mailing list.
                         You will be receiving a welcome email shortly.`;
     } else if (level === "warning") {
-      toast.src = exclamation;
-      toast.alt = "Exclamation Point";
-      toast.message = `The email you entered is already on our mailing list.
+      notification.src = exclamation;
+      notification.alt = "Exclamation Point";
+      notification.message = `The email you entered is already on our mailing list.
                         Thank you for joining the community.`;
     } else {
-      toast.src = xmark;
-      toast.alt = "X Mark";
-      toast.message = `There was an issue with your email submission.
+      notification.src = xmark;
+      notification.alt = "X Mark";
+      notification.message = `There was an issue with your email submission.
                         Please check your email and try again.`
     }
-    this.setState({ toast });
+    this.setState({ notification });
   };
 
-  showToast = () => {
-    const toast = { ...this.state.toast };
-    toast.visible = true;
-    this.setState({ toast }, () => {
+  showNotification = () => {
+    const notification = { ...this.state.notification };
+    notification.visible = true;
+    this.setState({ notification }, () => {
       setTimeout(() => {
-        toast.visible = false;
-        this.setState({ toast });
+        notification.visible = false;
+        this.setState({ notification });
       }, 3000);
     });
   };
@@ -105,7 +105,7 @@ class ComingSoon extends Component {
       subscribe,
       links,
       countdown,
-      toast
+      notification
     } = this.state;
 
     return (
@@ -120,18 +120,18 @@ class ComingSoon extends Component {
         <Title text={title.text} />
         <Description
           text={description.text}
-          src={toast.src}
-          alt={toast.alt}
-          message={toast.message}
-          visible={toast.visible}
-          level={toast.level}
+          src={notification.src}
+          alt={notification.alt}
+          message={notification.message}
+          visible={notification.visible}
+          level={notification.level}
         />
         <Subscribe
           placeholder={subscribe.placeholder}
           buttonText={subscribe.buttonText}
           changeLogoSpeed={this.changeLogoSpeed}
-          configureToast={this.configureToast}
-          showToast={this.showToast}
+          configureNotification={this.configureNotification}
+          showNotification={this.showNotification}
         />
         <Links links={links} />
       </div>
