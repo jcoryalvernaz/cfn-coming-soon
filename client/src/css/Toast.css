@@ -5,7 +5,8 @@
     grid-column: 1 / -1;
     grid-row: 1 / -1;
     grid-template-columns: 1fr 5fr;
-    transition: all .35s ease;
+    position: relative;
+    transition: .35s;
     transform: translateY(100%);
 }
 

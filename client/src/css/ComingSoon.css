@@ -1,8 +1,8 @@
 .background {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: 1fr 10fr 1fr;
-  grid-template-rows: 100px auto 50px 100px 100px 150px;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 100px auto 50px auto 100px auto;
   grid-template-areas:
     "sidebar-left     countdown     sidebar-right"
     "sidebar-left     logo          sidebar-right"
@@ -11,6 +11,7 @@
     "sidebar-left     subscribe     sidebar-right"
     "sidebar-left     social        sidebar-right";
   justify-items: center;
+  align-items: center;
   color: white;
 }
 
