@@ -6,7 +6,7 @@ import { Description } from "./Description";
 import { Links } from "./Links";
 import Countdown from "./Countdown";
 import Subscribe from "./Subscribe";
-import logo from "../gear.svg";
+import logo from "../gear-with-holes.svg";
 import xmark from "../x-mark.svg";
 import exclamation from "../exclamation.svg";
 import check from "../check-mark.svg";
