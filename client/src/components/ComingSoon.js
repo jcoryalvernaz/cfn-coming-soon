@@ -18,7 +18,7 @@ class ComingSoon extends Component {
       futureDate: "2019-08-31 00:00:00"
     },
     logo: {
-      alt: "Spinning React Logo",
+      alt: "Spinning Gear",
       src: logo,
       spinSpeed: "slow"
     },

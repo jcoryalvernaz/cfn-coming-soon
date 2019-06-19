@@ -26,7 +26,7 @@ class Countdown extends Component {
 
     const clockDuration = duration(futureDate.diff(today));
 
-    const days = clockDuration.days();
+    const days = Math.floor(clockDuration.asDays());
     const hours = clockDuration.hours();
     const mins = clockDuration.minutes();
     const secs = clockDuration.seconds();
