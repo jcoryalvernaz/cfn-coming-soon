@@ -27,6 +27,7 @@
 }
 
 .toast img {
+    stroke: black;
     justify-self: center;
     align-self: center;
     width: 40px;

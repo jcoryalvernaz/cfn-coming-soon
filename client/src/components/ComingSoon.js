@@ -6,7 +6,10 @@ import { Description } from "./Description";
 import { Links } from "./Links";
 import Countdown from "./Countdown";
 import Subscribe from "./Subscribe";
-import logo from "../logo.svg";
+import logo from "../gear.svg";
+import xmark from "../x-mark.svg";
+import exclamation from "../exclamation.svg";
+import check from "../check-mark.svg";
 import "../css/ComingSoon.css";
 
 class ComingSoon extends Component {
@@ -42,12 +45,11 @@ class ComingSoon extends Component {
       }
     ],
     toast: {
-      src: "http://svgshare.com/i/19y.svg",
+      src: "",
       alt: "",
-      message:
-        "Thank you for subscribing to our mailing list. You will be receiving a welcome email shortly.",
+      message: "",
       visible: false,
-      level: "success"
+      level: ""
     }
   };
 
@@ -55,18 +57,18 @@ class ComingSoon extends Component {
     const toast = { ...this.state.toast };
     toast.level = level;
     if (level === "success") {
-      toast.src = "https://svgshare.com/i/19y.svg";
+      toast.src = check;
       toast.alt = "Check Mark";
       toast.message = `Thank you for subscribing to our mailing list.
                         You will be receiving a welcome email shortly.`;
     } else if (level === "warning") {
-      toast.src = "https://svgshare.com/i/19x.svg";
+      toast.src = exclamation;
       toast.alt = "Exclamation Point";
       toast.message = `The email you entered is already on our mailing list.
                         Thank you for joining the community.`;
     } else {
-      toast.src = "https://svgshare.com/i/19E.svg";
-      toast.alt = "X";
+      toast.src = xmark;
+      toast.alt = "X Mark";
       toast.message = `There was an issue with your email submission.
                         Please check your email and try again.`
     }
