@@ -1,6 +1,10 @@
 :root {
-  --highlight-color: #61dafb;
-  --back-color: #282c34;
+  --primary-color: #4ECDC4;
+  --background-color: #292F36;
+  --text-color: #FFFFFA;
+  --secondary-text-color: #000103;
+  --warning-color: #FA8334;
+  --danger-color: #FF312E;
 }
 
 html {
@@ -15,8 +19,8 @@ html {
 }
 
 body {
-  background-image: url(../floating-cogs.svg);
-  background-color: var(--back-color);
+  background-image: url(../images/floating-cogs.svg);
+  background-color: var(--background-color);
   min-height: calc(100vh - 100px);
   margin: 10px;
   background-attachment: fixed;

@@ -15,26 +15,26 @@
 }
 
 .notification.success {
-    background-color: var(--highlight-color);
+    background-color: var(--primary-color);
 }
 
 .notification.warning {
-    background-color: #f38211;
+    background-color: var(--warning-color);
 }
 
 .notification.danger {
-    background-color: #c0392b;
+    background-color: var(--danger-color);
 }
 
 .notification img {
-    stroke: black;
     justify-self: center;
     align-self: center;
     width: 40px;
 }
 
 .notification p {
-    color: black;
+    color: var(--secondary-text-color);
+    font-weight: 500;
     align-self: center;
     padding-right: 10px;
 }

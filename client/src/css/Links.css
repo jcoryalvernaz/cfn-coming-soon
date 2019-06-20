@@ -9,7 +9,7 @@
   }
 
   .social-link {
-    color: white;
+    color: var(--text-color);
     grid-column: minmax(50px, 1fr);
     display: grid;
     grid-gap: 10px;

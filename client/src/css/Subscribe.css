@@ -10,10 +10,8 @@
     grid-area: input;
     border-radius: 4px;
     height: 40px;
-    background-color: #000000;
-    color: #ffffff;
-    border: 1px solid #ffffff;
-    border-color: #ffffff;
+    background-color: var(--secondary-text-color);
+    border: 1px solid var(--text-color);
     padding-left: 10px;
     outline: none;
     font-size: 16px;
@@ -21,24 +19,25 @@
   }
 
   .subscribe-email::placeholder {
-    color: #ffffff;
+    color: var(--text-color);
     font-size: 16px;
   }
 
   .subscribe-email:focus, :hover {
-    border-color: var(--highlight-color);
+    border-color: var(--primary-color);
   }
 
   .subscribe-button {
     grid-area: button;
     height: 40px;
-    background-color: var(--highlight-color);
+    background-color: var(--primary-color);
     border: 0;
-    color: #000000;
+    color: var(--secondary-text-color);
+    border: 1px solid var(--secondary-text-color);
     border-radius: 4px;
     padding: 10px;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: bolder;
     cursor: pointer;
     transition: all 0.2s ease-in;
   }

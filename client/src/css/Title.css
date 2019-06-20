@@ -17,7 +17,7 @@
   display: block;
   content: '';
   height: 10px;
-  background: linear-gradient(to var(--direction, left), var(--highlight-color), transparent);
+  background: linear-gradient(to var(--direction, left), var(--primary-color), transparent);
 }
 
 .title h1:after {

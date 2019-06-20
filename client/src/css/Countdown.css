@@ -10,14 +10,12 @@
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
-    color: white;
   }
 
   .countdown-segment-number {
     border-radius: 4px;
-    background-color: #000000;
-    color: #ffffff;
-    border: 1px solid #ffffff;
+    background-color: var(--secondary-text-color);
+    border: 1px solid var(--primary-color);
     justify-content: center;
     padding: 10px 10px;
     font-size: 30px;
@@ -25,10 +23,10 @@
   }
 
   .countdown-segment-number:hover {
-    border-color: var(--highlight-color);
     transform: scale(1.08);
   }
 
   .countdown-segment-caption {
     font-size: 14px;
+    font-weight: 500;
   }

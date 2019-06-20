@@ -6,10 +6,10 @@ import { Description } from "./Description";
 import { Links } from "./Links";
 import Countdown from "./Countdown";
 import Subscribe from "./Subscribe";
-import logo from "../gear-with-holes.svg";
-import xmark from "../x-mark.svg";
-import exclamation from "../exclamation.svg";
-import check from "../check-mark.svg";
+import logo from "../images/gear-with-holes.svg";
+import xmark from "../images/x-mark.svg";
+import exclamation from "../images/exclamation.svg";
+import check from "../images/check-mark.svg";
 import "../css/ComingSoon.css";
 
 class ComingSoon extends Component {

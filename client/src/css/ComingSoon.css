@@ -12,10 +12,10 @@
     "sidebar-left     social        sidebar-right";
   justify-items: center;
   align-items: center;
-  color: white;
+  color: var(--text-color);
 }
 
-@media(max-width: 500px) {
+@media(max-width: 700px) {
   .background {
     grid-template-columns: 1fr;
     grid-template-areas:
