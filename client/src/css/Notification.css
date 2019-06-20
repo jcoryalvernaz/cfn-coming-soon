@@ -5,6 +5,7 @@
     grid-column: 1 / -1;
     grid-row: 1 / -1;
     grid-template-columns: 1fr 5fr;
+    border: 1px solid var(--secondary-text-color);
     position: relative;
     transition: .35s;
     transform: translateY(100%);
@@ -15,7 +16,7 @@
 }
 
 .notification.success {
-    background-color: var(--primary-color);
+    background-color: var(--success-color);
 }
 
 .notification.warning {
