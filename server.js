@@ -27,6 +27,11 @@ app.get("/api/memberAdd", (req, res) => {
     });
 });
 
+// Catchall handler to send back React's index.html file
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/client/build/index.html'));
+})
+
 const port = process.env.PORT || 9001;
 app.listen(port);
 
