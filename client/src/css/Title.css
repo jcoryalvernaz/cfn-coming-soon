@@ -13,13 +13,13 @@
   align-items: center;
 }
 
-.title h1:before, .title h1:after {
+/* .title h1:before, .title h1:after {
   display: block;
   content: '';
   height: 10px;
   background: linear-gradient(to var(--direction, left), var(--primary-color), transparent);
-}
+} */
 
-.title h1:after {
+/* .title h1:after {
   --direction: right;
-}
+} */
