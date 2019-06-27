@@ -10,6 +10,10 @@ import logo from "../images/gear-with-holes.svg";
 import xmark from "../images/x-mark.svg";
 import exclamation from "../images/exclamation.svg";
 import check from "../images/check-mark.svg";
+import facebook from "../images/fbookicon.svg";
+import instagram from "../images/instaicon.svg";
+import youtube from "../images/youtubeicon.svg";
+import twitter from "../images/twittericon.svg";
 import "../css/ComingSoon.css";
 
 class ComingSoon extends Component {
@@ -35,13 +39,23 @@ class ComingSoon extends Component {
     links: [
       {
         url: "https://www.facebook.com/JasonAlvernaz",
-        logo: "https://image.flaticon.com/icons/svg/220/220200.svg",
+        logo: facebook,
         text: "Join"
       },
       {
-        url: "https://www.twitter.com/JasonAlvernaz",
-        logo: "https://image.flaticon.com/icons/svg/145/145812.svg",
+        url: "https://www.instagram.com/jason.cory.code/",
+        logo: instagram,
         text: "Follow"
+      },
+      {
+      url: "https://www.youtube.com/channel/UC9Psp9-p9jgHfDBReAAcZ3w",
+      logo: youtube,
+      text: "Watch"
+      },
+      {
+        url: "https://www.twitter.com/JasonAlvernaz",
+        logo: twitter,
+        text: "Tweet"
       }
     ],
     notification: {
