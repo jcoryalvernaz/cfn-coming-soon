@@ -35,5 +35,6 @@
   @media(max-width: 700px) {
     .social-links {
       margin-top: 20px;
+      grid-gap: 10px;
     }
   }
