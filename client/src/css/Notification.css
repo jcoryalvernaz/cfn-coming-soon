@@ -39,3 +39,7 @@
     align-self: center;
     padding-right: 10px;
 }
+
+.notification:hover {
+    border-color: var(--secondary-text-color);
+}
