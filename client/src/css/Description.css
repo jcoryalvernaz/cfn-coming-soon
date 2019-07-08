@@ -3,6 +3,7 @@
     grid-area: description;
     display: grid;
     font-size: 16px;
+    max-width: 700px;
     grid-template-columns: 1;
     grid-template-rows: 1;
     align-content: center;
