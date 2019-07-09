@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import moment, { duration } from "moment";
-import PropTypes from "prop-types";
 import "../css/Countdown.css";
 
 class Countdown extends Component {
@@ -67,13 +66,5 @@ class Countdown extends Component {
     );
   }
 }
-
-Countdown.propTypes = {
-  futureDate: PropTypes.string.isRequired
-};
-
-Countdown.defaultProps = {
-  futureDate: new Date()
-};
 
 export default Countdown;
