@@ -129,7 +129,6 @@ class ComingSoon extends Component {
           alt={logo.alt}
           src={logo.src}
           spinSpeed={logo.spinSpeed}
-          toggleLogoSpeed={this.toggleLogoSpeed}
         />
         <Title text={title.text} />
         <Description
