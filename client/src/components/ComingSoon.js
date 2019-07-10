@@ -38,7 +38,7 @@ class ComingSoon extends Component {
     },
     links: [
       {
-        url: "https://www.facebook.com/JasonAlvernaz",
+        url: "https://www.facebook.com/groups/CodingFromNull",
         logo: facebook,
         text: "Join"
       },
