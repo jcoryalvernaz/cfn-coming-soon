@@ -43,7 +43,7 @@ class ComingSoon extends Component {
         text: "Join"
       },
       {
-        url: "https://www.instagram.com/jason.cory.code/",
+        url: "https://www.instagram.com/codingfromnull",
         logo: instagram,
         text: "Follow"
       },
@@ -53,7 +53,7 @@ class ComingSoon extends Component {
       text: "Watch"
       },
       {
-        url: "https://www.twitter.com/JasonAlvernaz",
+        url: "https://www.twitter.com/CodingFromNull",
         logo: twitter,
         text: "Tweet"
       }
