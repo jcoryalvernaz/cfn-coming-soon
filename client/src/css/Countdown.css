@@ -2,7 +2,7 @@
   grid-area: countdown;
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: repeat(4, 50px);
+  grid-template-columns: repeat(4, 55px);
   grid-gap: 30px;
 }
 
