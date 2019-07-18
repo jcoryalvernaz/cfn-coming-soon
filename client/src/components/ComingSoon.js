@@ -19,7 +19,7 @@ import "../css/ComingSoon.css";
 class ComingSoon extends Component {
   state = {
     countdown: {
-      futureDate: "2019-08-31 00:00:00"
+      futureDate: "2019-12-31 00:00:00"
     },
     logo: {
       alt: "Spinning Gear",
