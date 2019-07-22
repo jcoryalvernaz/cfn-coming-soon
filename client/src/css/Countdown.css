@@ -4,6 +4,9 @@
   grid-auto-flow: column;
   grid-template-columns: repeat(4, 55px);
   grid-gap: 30px;
+  border-bottom: 5px solid var(--primary-color);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .countdown-segment {
