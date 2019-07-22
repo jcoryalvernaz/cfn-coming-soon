@@ -13,12 +13,10 @@
 }
 
 .countdown-segment-number {
-  border-radius: 4px;
-  background-color: var(--secondary-text-color);
-  border: 1px solid var(--primary-color);
   justify-content: center;
   padding: 10px 10px;
   font-size: 30px;
+  font-weight: 700;
   transition: all 0.2s ease-in;
 }
 
