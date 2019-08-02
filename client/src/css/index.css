@@ -1,11 +1,11 @@
 :root {
-  --primary-color: #4ECDC4;
-  --background-color: #292F36;
-  --text-color: #FFFFFA;
-  --secondary-text-color: #000103;
-  --warning-color: #FA8334;
-  --danger-color: #FF312E;
-  --success-color: #4C2A85;
+  --green: #4ecdc4;
+  --darkGrey: #292f36;
+  --white: #fffffa;
+  --black: #000103;
+  --orange: #fa8334;
+  --red: #ff312e;
+  --purple: #4c2a85;
 }
 
 html {
@@ -21,7 +21,7 @@ html {
 
 body {
   background-image: url(../images/floating-cogs.svg);
-  background-color: var(--background-color);
+  background-color: var(--darkGrey);
   min-height: calc(100vh - 100px);
   margin: 10px;
   background-attachment: fixed;

@@ -8,7 +8,7 @@
 }
 
 .countdown div:not(:last-child) {
-  border-right: 2px solid var(--primary-color);
+  border-right: 2px solid var(--green);
 }
 
 .countdown-segment {
@@ -34,7 +34,7 @@
 
 @media (max-width: 500px) {
   .countdown {
-    border-bottom: 5px solid var(--primary-color);
+    border-bottom: 5px solid var(--green);
   }
   .countdown div:not(:last-child) {
     border-right: 0px;

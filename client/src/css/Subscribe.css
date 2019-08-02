@@ -1,64 +1,66 @@
 .subscribe {
-    grid-area: subscribe;
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: [input] 4fr [button] 1fr;
-    align-items: center;
-  }
+  grid-area: subscribe;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: [input] 4fr [button] 1fr;
+  align-items: center;
+}
 
+.subscribe-email {
+  grid-area: input;
+  border-radius: 4px;
+  height: 40px;
+  background-color: var(--black);
+  border: 1px solid var(--white);
+  color: var(--white);
+  padding-left: 10px;
+  outline: none;
+  font-size: 16px;
+  transition: all 0.2s ease-in;
+}
+
+.subscribe-email::placeholder {
+  color: var(--white);
+  font-size: 16px;
+}
+
+.subscribe-email:focus,
+:hover {
+  border-color: var(--green);
+}
+
+.subscribe-button {
+  grid-area: button;
+  height: 40px;
+  background-color: var(--green);
+  border: 0;
+  color: var(--black);
+  border: 1px solid var(--black);
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.subscribe-button:hover {
+  filter: brightness(85%);
+}
+
+.subscribe-button:focus {
+  outline: none;
+}
+
+@media (max-width: 700px) {
+  .subscribe {
+    grid-template-areas:
+      "input"
+      "button";
+  }
+  .subscribe-button,
   .subscribe-email {
-    grid-area: input;
-    border-radius: 4px;
-    height: 40px;
-    background-color: var(--secondary-text-color);
-    border: 1px solid var(--text-color);
-    color: var(--text-color);
-    padding-left: 10px;
-    outline: none;
-    font-size: 16px;
-    transition: all 0.2s ease-in;
+    width: 250px;
+    grid-column: 1 / -1;
   }
-
-  .subscribe-email::placeholder {
-    color: var(--text-color);
-    font-size: 16px;
-  }
-
-  .subscribe-email:focus, :hover {
-    border-color: var(--primary-color);
-  }
-
-  .subscribe-button {
-    grid-area: button;
-    height: 40px;
-    background-color: var(--primary-color);
-    border: 0;
-    color: var(--secondary-text-color);
-    border: 1px solid var(--secondary-text-color);
-    border-radius: 4px;
-    padding: 10px;
-    font-size: 16px;
-    font-weight: bolder;
-    cursor: pointer;
-    transition: all 0.2s ease-in;
-  }
-
-  .subscribe-button:hover {
-    filter: brightness(85%);
-  }
-
-  .subscribe-button:focus {
-    outline: none;
-  }
-
-  @media (max-width: 700px) {
-    .subscribe {
-      grid-template-areas:
-        "input"
-        "button"
-    }
-    .subscribe-button, .subscribe-email {
-      width: 250px;
-      grid-column: 1 / -1;
-    }
-  }
+}

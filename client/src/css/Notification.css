@@ -1,45 +1,45 @@
 .notification {
-    border-radius: 4px;
-    display: grid;
-    grid-gap: 10px;
-    grid-column: 1 / -1;
-    grid-row: 1 / -1;
-    grid-template-columns: 1fr 5fr;
-    border: 1px solid var(--secondary-text-color);
-    position: relative;
-    transition: .35s;
-    transform: translateY(100%);
+  border-radius: 4px;
+  display: grid;
+  grid-gap: 10px;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  grid-template-columns: 1fr 5fr;
+  border: 1px solid var(--black);
+  position: relative;
+  transition: 0.35s;
+  transform: translateY(100%);
 }
 
 .notification.visible {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
 .notification.success {
-    background-color: var(--success-color);
+  background-color: var(--purple);
 }
 
 .notification.warning {
-    background-color: var(--warning-color);
+  background-color: var(--orange);
 }
 
 .notification.danger {
-    background-color: var(--danger-color);
+  background-color: var(--red);
 }
 
 .notification img {
-    justify-self: center;
-    align-self: center;
-    width: 40px;
+  justify-self: center;
+  align-self: center;
+  width: 40px;
 }
 
 .notification p {
-    color: var(--secondary-text-color);
-    font-weight: 500;
-    align-self: center;
-    padding-right: 10px;
+  color: var(--black);
+  font-weight: 500;
+  align-self: center;
+  padding-right: 10px;
 }
 
 .notification:hover {
-    border-color: var(--secondary-text-color);
+  border-color: var(--black);
 }
