@@ -154,7 +154,7 @@ class ComingSoon extends Component {
 
 ComingSoon.propTypes = {
   countdown: PropTypes.shape({
-    futureDate: PropTypes.string.isRequired
+    futureDate: PropTypes.instanceOf(Date)
   }),
   logo: PropTypes.shape({
     src: PropTypes.string,
