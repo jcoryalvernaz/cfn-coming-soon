@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import "../css/Subscribe.css";
 
 class Subscribe extends Component {
@@ -20,11 +21,11 @@ class Subscribe extends Component {
         })
         .then(json => {
           if (json.status === "subscribed") {
-            this.props.configureNotification('success');
+            this.props.configureNotification("success");
           } else if (json.title === "Member Exists") {
-            this.props.configureNotification('warning');
+            this.props.configureNotification("warning");
           } else {
-            this.props.configureNotification('danger')
+            this.props.configureNotification("danger");
           }
           this.props.showNotification();
         })

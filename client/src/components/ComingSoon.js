@@ -30,7 +30,8 @@ class ComingSoon extends Component {
       text: "Coming Soon!"
     },
     description: {
-      text: "The Coding From Null course platform will be up and running shortly. Please subscribe to our newsletter below to receive updates when new course material is available."
+      text:
+        "The Coding From Null course platform will be up and running shortly. Please subscribe to our newsletter below to receive updates when new course material is available."
     },
     subscribe: {
       placeholder: "Enter Email Address",
@@ -48,9 +49,9 @@ class ComingSoon extends Component {
         text: "Follow"
       },
       {
-      url: "https://www.youtube.com/channel/UC9Psp9-p9jgHfDBReAAcZ3w",
-      logo: youtube,
-      text: "Watch"
+        url: "https://www.youtube.com/channel/UC9Psp9-p9jgHfDBReAAcZ3w",
+        logo: youtube,
+        text: "Watch"
       },
       {
         url: "https://www.twitter.com/CodingFromNull",
@@ -84,7 +85,7 @@ class ComingSoon extends Component {
       notification.src = xmark;
       notification.alt = "X Mark";
       notification.message = `There was an issue with your email submission.
-                        Please check your email and try again.`
+                        Please check your email and try again.`;
     }
     this.setState({ notification });
   };
@@ -125,11 +126,7 @@ class ComingSoon extends Component {
     return (
       <div className="background">
         <Countdown futureDate={countdown.futureDate} />
-        <Logo
-          alt={logo.alt}
-          src={logo.src}
-          spinSpeed={logo.spinSpeed}
-        />
+        <Logo alt={logo.alt} src={logo.src} spinSpeed={logo.spinSpeed} />
         <Title text={title.text} />
         <Description
           text={description.text}
