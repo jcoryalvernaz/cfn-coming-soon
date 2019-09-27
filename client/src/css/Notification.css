@@ -16,7 +16,7 @@
 }
 
 .notification.success {
-  background-color: var(--purple);
+  background-color: var(--green);
 }
 
 .notification.warning {
