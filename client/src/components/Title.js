@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../css/Title.css";
+import "../styles/Title.css";
 
 export const Title = ({ text }) => {
   return (

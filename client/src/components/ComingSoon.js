@@ -14,7 +14,7 @@ import facebook from "../images/fbookicon.svg";
 import instagram from "../images/instaicon.svg";
 import youtube from "../images/youtubeicon.svg";
 import twitter from "../images/twittericon.svg";
-import "../css/ComingSoon.css";
+import "../styles/ComingSoon.css";
 
 class ComingSoon extends Component {
   state = {

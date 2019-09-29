@@ -1,7 +1,7 @@
 import React from "react";
 import Notification from "./Notification";
 
-import "../css/Description.css";
+import "../styles/Description.css";
 
 export const Description = ({ text, src, alt, message, visible, level }) => {
   return (

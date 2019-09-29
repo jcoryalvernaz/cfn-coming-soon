@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import moment, { duration } from "moment";
 
-import "../css/Countdown.css";
+import "../styles/Countdown.css";
 
 class Countdown extends Component {
   state = {

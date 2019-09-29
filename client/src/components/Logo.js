@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../css/Logo.css";
+import "../styles/Logo.css";
 
 export const Logo = ({ alt, src, spinSpeed }) => {
   return (
