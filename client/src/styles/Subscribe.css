@@ -3,7 +3,6 @@
   display: grid;
   grid-gap: 10px;
   grid-template-columns: [input] 4fr [button] 1fr;
-  align-items: center;
 }
 
 .subscribe-email {
@@ -21,7 +20,6 @@
 
 .subscribe-email::placeholder {
   color: var(--white);
-  font-size: 16px;
 }
 
 .subscribe-email:focus,
@@ -33,7 +31,6 @@
   grid-area: button;
   height: 40px;
   background-color: var(--green);
-  border: 0;
   color: var(--black);
   border: 1px solid var(--black);
   border-radius: 4px;
@@ -44,12 +41,10 @@
   transition: all 0.2s ease-in;
 }
 
-.subscribe-button:hover {
-  filter: brightness(85%);
-}
-
+.subscribe-button:hover,
 .subscribe-button:focus {
   outline: none;
+  filter: brightness(85%);
 }
 
 @media (max-width: 700px) {
