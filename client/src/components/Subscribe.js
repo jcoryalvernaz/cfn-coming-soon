@@ -1,64 +1,66 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
 import "../styles/Subscribe.css";
 
-class Subscribe extends Component {
-  state = {
+const Subscribe = ({
+  placeholder,
+  buttonText,
+  configureNotification,
+  showNotification,
+  changeLogoSpeed
+}) => {
+  const [state, setState] = useState({
     email: ""
+  });
+
+  const handleChange = e => {
+    setState({ email: e.target.value.trim() });
   };
 
-  handleChange = e => {
-    this.setState({ email: e.target.value.trim() });
-  };
-
-  handleSubmit = e => {
+  const handleSubmit = e => {
     e.preventDefault();
 
-    if (this.state.email) {
-      fetch(`/api/memberAdd?email=${this.state.email}`)
+    if (state.email) {
+      fetch(`/api/memberAdd?email=${state.email}`)
         .then(message => {
           return message.json();
         })
         .then(json => {
           if (json.status === "subscribed") {
-            this.props.configureNotification("success");
+            configureNotification("success");
           } else if (json.title === "Member Exists") {
-            this.props.configureNotification("warning");
+            configureNotification("warning");
           } else {
-            this.props.configureNotification("danger");
+            configureNotification("danger");
           }
-          this.props.showNotification();
+          showNotification();
         })
         .catch(err => {
           console.log("error", err);
         });
 
-      this.props.changeLogoSpeed();
+      changeLogoSpeed();
 
-      this.setState({ email: "" });
+      setState({ email: "" });
     }
   };
 
-  render() {
-    const { placeholder, buttonText } = this.props;
-
-    return (
-      <form className="subscribe" onSubmit={this.handleSubmit}>
-        <input
-          className="subscribe-email"
-          name="email"
-          type="email"
-          placeholder={placeholder}
-          onChange={this.handleChange}
-          value={this.state.email}
-          aria-label="Email Address"
-        />
-        <button className="subscribe-button" type="submit">
-          {buttonText}
-        </button>
-      </form>
-    );
-  }
-}
+  return (
+    <form className="subscribe" onSubmit={handleSubmit}>
+      <input
+        className="subscribe-email"
+        name="email"
+        type="email"
+        placeholder={placeholder}
+        onChange={handleChange}
+        value={state.email}
+        aria-label="Email Address"
+      />
+      <button className="subscribe-button" type="submit">
+        {buttonText}
+      </button>
+    </form>
+  );
+};
 
 export default Subscribe;
