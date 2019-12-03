@@ -2,7 +2,7 @@ import React from "react";
 
 import "../styles/Links.css";
 
-export const Links = ({ links }) => {
+const Links = ({ links }) => {
   return (
     <div className="social-links">
       {links.map((link, i) => {
@@ -28,3 +28,5 @@ export const Links = ({ links }) => {
     </div>
   );
 };
+
+export default Links;

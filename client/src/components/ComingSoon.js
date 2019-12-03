@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Logo from "./Logo";
 import { Title } from "./Title";
 import { Description } from "./Description";
-import { Links } from "./Links";
+import Links from "./Links";
 import Countdown from "./Countdown";
 import Subscribe from "./Subscribe";
 import logo from "../images/gear-with-holes.svg";
