@@ -19,7 +19,7 @@ import "../styles/ComingSoon.css";
 class ComingSoon extends Component {
   state = {
     countdown: {
-      futureDate: "2019-12-31 00:00:00"
+      countdownDate: "2019-12-31 00:00:00"
     },
     logo: {
       alt: "Spinning Gear",
@@ -125,7 +125,7 @@ class ComingSoon extends Component {
 
     return (
       <div className="background">
-        <Countdown futureDate={countdown.futureDate} />
+        <Countdown countdownDate={countdown.countdownDate} />
         <Logo alt={logo.alt} src={logo.src} spinSpeed={logo.spinSpeed} />
         <Title text={title.text} />
         <Description
@@ -151,7 +151,7 @@ class ComingSoon extends Component {
 
 ComingSoon.propTypes = {
   countdown: PropTypes.shape({
-    futureDate: PropTypes.instanceOf(Date)
+    countdownDate: PropTypes.instanceOf(Date)
   }),
   logo: PropTypes.shape({
     src: PropTypes.string,
@@ -185,7 +185,7 @@ ComingSoon.propTypes = {
 
 ComingSoon.defaultProps = {
   countdown: {
-    futureDate: new Date()
+    countdownDate: new Date()
   },
   logo: {
     alt: "",
