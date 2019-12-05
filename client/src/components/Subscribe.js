@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 import "../styles/Subscribe.css";
 
@@ -61,6 +62,14 @@ const Subscribe = ({
       </button>
     </form>
   );
+};
+
+Subscribe.propTypes = {
+  placeholder: PropTypes.string.isRequired,
+  buttonText: PropTypes.string.isRequired,
+  configureNotification: PropTypes.func.isRequired,
+  showNotification: PropTypes.func.isRequired,
+  changeLogoSpeed: PropTypes.func.isRequired
 };
 
 export default Subscribe;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import "../styles/Links.css";
 
@@ -22,5 +23,15 @@ const Links = ({ links }) => (
     })}
   </div>
 );
+
+Links.propTypes = {
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      url: PropTypes.string.isRequired,
+      logo: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired
+    })
+  ).isRequired
+};
 
 export default Links;

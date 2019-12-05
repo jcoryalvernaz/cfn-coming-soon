@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import Logo from "./Logo";
 import Title from "./Title";
 import Description from "./Description";
@@ -148,73 +147,5 @@ class ComingSoon extends Component {
     );
   }
 }
-
-ComingSoon.propTypes = {
-  countdown: PropTypes.shape({
-    countdownDate: PropTypes.instanceOf(Date)
-  }),
-  logo: PropTypes.shape({
-    src: PropTypes.string,
-    alt: PropTypes.string
-  }),
-  title: PropTypes.shape({
-    text: PropTypes.string
-  }),
-  description: PropTypes.shape({
-    text: PropTypes.string
-  }),
-  subscribe: PropTypes.shape({
-    placeholder: PropTypes.string,
-    buttonText: PropTypes.string
-  }),
-  links: PropTypes.arrayOf(
-    PropTypes.shape({
-      url: PropTypes.string,
-      logo: PropTypes.string,
-      text: PropTypes.string
-    })
-  ),
-  notification: PropTypes.shape({
-    src: PropTypes.string,
-    alt: PropTypes.string,
-    message: PropTypes.string,
-    visible: PropTypes.bool,
-    level: PropTypes.string
-  })
-};
-
-ComingSoon.defaultProps = {
-  countdown: {
-    countdownDate: new Date()
-  },
-  logo: {
-    alt: "",
-    src: ""
-  },
-  title: {
-    text: ""
-  },
-  description: {
-    text: ""
-  },
-  subscribe: {
-    placeholder: "",
-    buttonText: ""
-  },
-  links: [
-    {
-      url: "",
-      logo: "",
-      text: ""
-    }
-  ],
-  notification: {
-    src: "",
-    alt: "",
-    message: "",
-    visible: false,
-    level: ""
-  }
-};
 
 export default ComingSoon;

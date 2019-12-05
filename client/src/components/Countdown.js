@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import moment, { duration } from "moment";
 import useInterval from "react-useinterval";
 
@@ -60,6 +61,10 @@ const Countdown = ({ countdownDate }) => {
       ))}
     </div>
   );
+};
+
+Countdown.propTypes = {
+  countdownDate: PropTypes.string.isRequired
 };
 
 export default Countdown;
