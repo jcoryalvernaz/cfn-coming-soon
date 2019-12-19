@@ -12,7 +12,7 @@
 # production
 /client/build
 /build
-/functions
+functions
 /netlify
 
 # misc
