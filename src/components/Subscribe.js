@@ -22,10 +22,8 @@ const Subscribe = ({
     e.preventDefault();
 
     if (state.email) {
-      fetch(`/api/memberAdd?email=${state.email}`)
-        .then(message => {
-          return message.json();
-        })
+      fetch(`/.netlify/functions/addMember?email=${state.email}`)
+        .then(message => message.json())
         .then(json => {
           if (json.status === "subscribed") {
             configureNotification("success");
