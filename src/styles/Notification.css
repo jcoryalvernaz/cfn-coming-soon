@@ -19,11 +19,7 @@
   background-color: var(--green);
 }
 
-.notification.warning {
-  background-color: var(--orange);
-}
-
-.notification.danger {
+.notification.error {
   background-color: var(--red);
 }
 

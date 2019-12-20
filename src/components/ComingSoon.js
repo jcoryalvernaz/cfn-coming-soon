@@ -7,7 +7,6 @@ import Countdown from "./Countdown";
 import Subscribe from "./Subscribe";
 import logo from "../images/gear-with-holes.svg";
 import xmark from "../images/x-mark.svg";
-import exclamation from "../images/exclamation.svg";
 import check from "../images/check-mark.svg";
 import facebook from "../images/fbookicon.svg";
 import instagram from "../images/instaicon.svg";
@@ -67,24 +66,17 @@ class ComingSoon extends Component {
     }
   };
 
-  configureNotification = level => {
+  configureNotification = obj => {
     const notification = { ...this.state.notification };
-    notification.level = level;
-    if (level === "success") {
-      notification.src = check;
-      notification.alt = "Check Mark";
-      notification.message = `Thank you for subscribing to our mailing list.
-                        You will be receiving a welcome email shortly.`;
-    } else if (level === "warning") {
-      notification.src = exclamation;
-      notification.alt = "Exclamation Point";
-      notification.message = `The email you entered is already on our mailing list.
-                        Thank you for joining the community.`;
+    notification.message = obj.body.msg;
+    if (obj.status === 200) {
+      notification.src = check
+      notification.alt = "Check Mark"
+      notification.level = "success"
     } else {
-      notification.src = xmark;
-      notification.alt = "X Mark";
-      notification.message = `There was an issue with your email submission.
-                        Please check your email and try again.`;
+      notification.src = xmark
+      notification.alt = "X Mark"
+      notification.level = "error"
     }
     this.setState({ notification });
   };

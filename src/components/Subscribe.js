@@ -23,20 +23,12 @@ const Subscribe = ({
 
     if (state.email) {
       fetch(`/.netlify/functions/addMember?email=${state.email}`)
-        .then(message => message.json())
-        .then(json => {
-          if (json.status === "subscribed") {
-            configureNotification("success");
-          } else if (json.title === "Member Exists") {
-            configureNotification("warning");
-          } else {
-            configureNotification("danger");
-          }
+        .then(res => res.json().then(data => ({status: res.status, body: data})))
+        .then(obj => {
+          configureNotification(obj);
           showNotification();
         })
-        .catch(err => {
-          console.log("error", err);
-        });
+        .catch(err => console.log(err))
 
       changeLogoSpeed();
 
